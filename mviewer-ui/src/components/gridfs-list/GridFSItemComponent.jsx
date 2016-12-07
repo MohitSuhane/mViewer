@@ -1,18 +1,21 @@
-import React from 'react'
-import GridFSListStyles from '../shared/list-panel.css'
-import $ from 'jquery'
+import React from 'react';
+/*eslint-disable */
+import toolTip from '../shared/tool-tip.js';
+/*eslint-enable */
+import GridFSListStyles from '../shared/list-panel.css';
+
 class GridFSItemComponent extends React.Component {
 
- constructor(props) {
-   super(props);
-   this.state = {
-     hover_flag: false
-   }
+  constructor(props) {
+    super(props);
+    this.state = {
+      hover_flag : false
+    };
   }
 
   render () {
     return (
-      <div className={(this.props.isSelected ? GridFSListStyles.menuItem +' ' +GridFSListStyles.highlight :GridFSListStyles.menuItem)} key={this.props.name} onClick={this.props.onClick} value={this.props.name} >
+      <div className={(this.props.isSelected ? GridFSListStyles.menuItem + ' ' + GridFSListStyles.highlight : GridFSListStyles.menuItem)} key={this.props.name} onClick={this.props.onClick} value={this.props.name} >
         <span className={GridFSListStyles.collectionIcon}>
           <i className="fa fa-file" aria-hidden="true"></i>
         </span>
@@ -22,11 +25,12 @@ class GridFSItemComponent extends React.Component {
   }
 }
 GridFSItemComponent.getDefaultProps = {
-  isSelected: false
-}
+  isSelected : false
+};
 GridFSItemComponent.propTypes = {
-  onClick: React.PropTypes.func.isRequired,
-  isSelected: React.PropTypes.bool
-}
+  onClick : React.PropTypes.func,
+  isSelected : React.PropTypes.bool,
+  name : React.PropTypes.string
+};
 
 export default GridFSItemComponent;
